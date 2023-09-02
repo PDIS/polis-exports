@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 <conversation_id> <container_id> <date>"
+    echo "Example: $0 2bahudkd2j a189b56e5326 2023-09-01"
+    echo "<container_id> can be found by 'docker ps | grep polis-math'"
+    exit 1
+fi
+
 CONVERSATION_ID="${1:-2bahudkd2j}"
 CONTAINER_ID="${2:-math}"
 DATE=$3
